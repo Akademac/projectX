@@ -39,10 +39,10 @@ function dropDown(x) {
 	drop.style.display = 'block';
 	switch(x) {
 		case 1:
-			console.log('asdad');
-			drop.innerHTML = myRequest.responseText;
-			console.log(myRequest.responseText);
-			//drop.style.backgroundColor = firstColor;
+			//console.log('asdad');
+			drop.innerHTML = myRequest.readyState;
+			console.log(myRequest.readyState);
+			drop.style.backgroundColor = firstColor;
 			break;
 		case 2:
 			drop.style.backgroundColor = secondColor;
