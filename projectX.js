@@ -42,7 +42,7 @@ function dropDown(x) {
 			console.log('asdad');
 			drop.innerHTML = myRequest.responseText;
 			console.log(myRequest.responseText);
-			drop.style.backgroundColor = firstColor;
+			//drop.style.backgroundColor = firstColor;
 			break;
 		case 2:
 			drop.style.backgroundColor = secondColor;
