@@ -1,0 +1,164 @@
+					 /*Body*/
+
+body {
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+/*	background-image: url('Images/mainBackground5.jpg');  */
+}
+
+#logo {
+	border: 1px solid black;
+	margin-top: 20px;
+	padding: 2px;
+	font-size: 2rem;
+	background-color: #f5f5f5;
+	opacity: .7;
+}
+
+.navs {
+	float: right;
+	height: 30px;
+	width: 100px;
+	margin-top: 10px;
+	text-align: center;
+	padding-top: 8px;
+	color: white;
+	cursor: pointer;
+	opacity: .8;
+}
+
+#info {
+	background-color: #ffc125;
+}
+
+
+#info:hover {
+	opacity: 1;
+	border-bottom: 2px solid #66cdaa;
+}
+
+#location {
+	background-color: #008080;
+}
+
+#location:hover {
+	opacity: 1;
+	border-bottom: 2px solid #40e0d0;
+
+}
+
+#about {
+	background-color: #667937;
+}
+
+#about:hover {
+	opacity: 1;
+	border-bottom: 2px solid yellow;
+
+}
+
+#drop {
+	width: 300px;
+	height: 500px;
+	margin-right: -300px;
+	margin-top: 50px;
+	float: right;
+	background-color: black;
+	display: none;
+}
+
+#buttons {
+	margin: 170px auto;
+	width: 200px;
+	height: 200px;
+	display: grid;
+	grid-template-rows: repeat(2, 1fr);
+	text-align: center;
+	grid-gap: 10px;
+}
+
+.btn {
+	padding-top: 30px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 1.5rem;
+	color: white;
+}
+
+
+#add {
+	background-color: #000;
+	opacity: .7;
+}
+
+#add:hover {
+	opacity: 1;
+}
+
+#view {
+	background-color: #088da5;
+	opacity: .7;
+}
+
+#view:hover {
+	opacity: 1;
+}
+
+a {
+	text-decoration: none;
+}
+
+							/*addContact.html*/
+
+#container {
+	width: 80%;
+	height: 560px;
+	margin: 10px auto;
+	background-image: url('Images/mainBackground1.jpg');
+	background-size: cover;
+	padding-top: 50px;
+	overflow: hidden;
+}
+
+.inputs {
+	display: block;
+	margin: 0px auto;
+	width: 25%;
+	height: 50px;
+	font-size: 1.5rem;
+	font-family: Arial;
+	border-radius: 3px;
+	opacity: .8;
+	margin-top: 5px;
+}
+
+#form .inputs:nth-child(7) {
+	width: 25.50%;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+.inputs:hover {
+	opacity: 1;
+}
+
+
+
+						/*viewAll.html*/
+
+.headData {
+	padding-right: 50px;
+	font-size: 1.5rem;
+	text-align: left;
+	border: 1px solid black;
+}	
+
+td {
+	border: 1px solid black;
+}
+table {
+	border-collapse: collapse;
+	
+}

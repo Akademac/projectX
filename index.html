@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name='viewport' content='width=device-width' initial-scale=1.0 />
+		<link rel='icon' type='image.png' href='Images/Logoes/logo.png' />
+		<title>Project X</title>
+		<link rel='stylesheet' type='text/css' href='projectX.css' />
+	</head>
+	<body>
+		<span id='logo'>AddressBook</span>
+		<span class='navs' id='location' onmouseover="dropDown(3)" onmouseout="dropUp()">Location</span>
+		<span class='navs' id='about' onmouseover="dropDown(2)" onmouseout="dropUp()">About Me</span>
+		<span class='navs' id='info' onmouseover="dropDown(1)" onmouseout="dropUp()">Info</span>
+		<div id='drop'></div>
+		<span id='buttons'>
+			<span class="btn" id='add' onclick="otherPage(1)">Add New Contact</span>
+			<span class='btn' id='view' onclick="otherPage(2)">View All Contacts</span>
+		</span>
+
+	</body>
+	<script src='projectX.js'> 
+	</script> 
+		
+</html>

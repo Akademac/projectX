@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name='viewport' content='width=device-width' initial-scale=1.0 />
+		<link rel='icon' type='image.png' href='Images/Logoes/logo.png' />
+		<title>Project X</title>
+		<link rel='stylesheet' type='text/css' href='projectX.css' />
+	</head>
+	<body>
+
+		<div id='container'>
+			<div id='form'>
+				<input type="text" placeholder="First Name" name="firstName" id='firstName' class='inputs' />
+				<input type="text" placeholder="Last Name" name="lastName" id='lastName' class='inputs' required />
+				<input type="text" placeholder="Phone Number" name="phoneNumber" id='phoneNumber' class='inputs' required />
+				<input type="text" placeholder="City" name="city" id='city' class='inputs' required />
+				<input type="text" placeholder="Address" name="address" id='address' class='inputs' required />
+				<input type="text" placeholder="Email" name="email" id='email' class='inputs' required />
+				<button type="submit" class="inputs" onclick="store()" >Submit</button>
+				<a href='viewAll.html'><button type="submit" class="inputs" onclick="store()" >View All contacts</button></a>
+			</div>
+		</div>
+
+		<script src='projectX.js'> 
+		</script> 
+	</body>
+	
+</html>
