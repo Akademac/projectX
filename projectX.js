@@ -5,7 +5,7 @@ var about = document.querySelector('#about');
 var place = document.querySelector('#location');
 var addBtn = document.querySelector('#add');
 var viewBtn = document.querySelector('#view'); 
-var drop = document.querySelector('#drop');
+var infoDiv = document.querySelector('#infoDiv');
  
 // inputs
 
@@ -33,28 +33,7 @@ var firstColor = '#66cdaa';
 var secondColor = 'yellow'
 var thirdColor =  '#40e0d0';
 
-function dropDown(x) {
-	var myRequest = new XMLHttpRequest();
-	myRequest.open('GET', 'https://akademac.github.io/projectX.txt/projectX.txt');
-	drop.style.display = 'block';
-	switch(x) {
-		case 1:
-			//console.log('asdad');
-			drop.innerHTML = myRequest.readyState;
-			console.log(myRequest.readyState);
-			drop.style.backgroundColor = firstColor;
-			break;
-		case 2:
-			drop.style.backgroundColor = secondColor;
-			break;
-		case 3:
-			drop.style.backgroundColor = thirdColor;
-			break;
-		}
-		myRequest.send();
-};
-
-let dropUp = () => drop.style.display = 'none';
+let dropUp = () => infoDiv.style.display = 'none';
 
 // other pages
 
@@ -130,4 +109,18 @@ function clearAll() {
 displayAll();
 
 // grab ajax text
+
+var myRequest = new XMLHttpRequest();
+
+function dropDown() {
+	myRequest.open('GET', 'https://akademac.github.io/projectX.txt/projectX.txt');
+	myRequest.onload = function() {
+		//var data = JSON.parse(myRequest.responseText);
+		infoDiv.innerHTML = myRequest.responseText;
+		infoDiv.style.display = "inline";
+		infoDiv.style.color = 'white';
+	}
+myRequest.send();
+
+};
 
