@@ -4,7 +4,7 @@ body {
 	margin: 0px;
 	padding: 0px;
 	overflow: hidden;
-/*	background-image: url('Images/mainBackground5.jpg');  */
+	background-image: url('Images/mainBackground5.jpg'); 
 }
 
 #logo {
@@ -66,6 +66,7 @@ body {
 	float: right;
 	background-color: black;
 	display: none;
+	opacity: .5;
 }
 
 #buttons {
@@ -150,15 +151,21 @@ a {
 
 .headData {
 	padding-right: 50px;
-	font-size: 1.5rem;
+	font-size: 2rem;
 	text-align: left;
 	border: 1px solid black;
 }	
+
+.fields {
+	font-size: 1.5;
+	padding: 5px;
+}
 
 td {
 	border: 1px solid black;
 }
 table {
 	border-collapse: collapse;
+	color: white;
 	
 }

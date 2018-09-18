@@ -25,7 +25,9 @@ var showBook = document.querySelector('#showBook');
 
 var storeArray = [];
 
-	//styling	
+// vars for displaying conacts
+
+var str1, str2; 	
 
 // colors
 
@@ -80,20 +82,20 @@ function displayAll() {
 	else {
 		storeArray = JSON.parse(localStorage['projectX']);
 		if(showBook === null) {
-			return false
+			return false;
 		}
 		else {
 		showBook.innerHTML = '';
 		for(x in storeArray) {
-			var str = '<tr>';
-			str += '<td class="fields">' + storeArray[x].firstName + '</td>';
-			str += '<td class="fields">' + storeArray[x].lastName + '</td>';
-			str += '<td class="fields">' + storeArray[x].phoneNumber + '</td>';
-			str += '<td class="fields">' + storeArray[x].city + '</td>';
-			str += '<td class="fields">' + storeArray[x].address + '</td>';
-			str += '<td class="fields">' + storeArray[x].email + '</td>';
-			str += '</tr>';
-			showBook.innerHTML += str;
+			str1 = '<tr>';
+			str1 += '<td class="fields">' + storeArray[x].firstName + '</td>';
+			str1 += '<td class="fields">' + storeArray[x].lastName + '</td>';
+			str1 += '<td class="fields">' + storeArray[x].phoneNumber + '</td>';
+			str1 += '<td class="fields">' + storeArray[x].city + '</td>';
+			str1 += '<td class="fields">' + storeArray[x].address + '</td>';
+			str1 += '<td class="fields">' + storeArray[x].email + '</td>';
+			str1 += '</tr>';
+			showBook.innerHTML += str1;
 		}	
 		}
 	}
@@ -111,16 +113,70 @@ displayAll();
 // grab ajax text
 
 var myRequest = new XMLHttpRequest();
-
-function dropDown() {
-	myRequest.open('GET', 'https://akademac.github.io/projectX.txt/projectX.txt');
-	myRequest.onload = function() {
-		//var data = JSON.parse(myRequest.responseText);
+var data;
+function dropDown(x) {
+	if(x === 1){
+		myRequest.open('GET', 'https://akademac.github.io/projectX.txt/projectX.txt');
+		myRequest.onload = function() {
 		infoDiv.innerHTML = myRequest.responseText;
 		infoDiv.style.display = "inline";
 		infoDiv.style.color = 'white';
-	}
+				};
+		 }
+	else if(x === 2) {
+		myRequest.open('GET', 'https://akademac.github.io/JSON/testJson.json');
+		myRequest.onload = function() {
+			data = JSON.parse(myRequest.responseText);
+			console.log(data);
+			infoDiv.style.display = "inline";
+			infoDiv.innerHTML = data.name;
+		} }
+
 myRequest.send();
 
 };
+
+function frame() {
+	var loc = '<iframe src="https://goo.gl/maps/4qqTyNbC4w92" width="300px" height="500px"></iframe>'
+	infoDiv.style.display = "inline";
+	infoDiv.innerHTML = loc; 
+}
+
+
+var btn1 = document.getElementById('btn1');
+
+// recursive function
+
+function reverseF(n) {
+	if(!n.length) {
+		return n;
+	} 
+	else {
+		return reverseF(n.slice(1)).concat(n[0]);
+	}
+
+}	
+
+
+btn1.addEventListener('click', function() {
+	storeArray = JSON.parse(localStorage['projectX']);
+	storeArray2 = reverseF(storeArray);
+		if(showBook === null) {
+			return false;
+		}
+		else {
+			showBook.innerHTML = '';
+			for(x in storeArray2) {
+				str2 = '<tr>';
+				str2 += '<td class="fields">' + storeArray2[x].firstName + '</td>';
+				str2 += '<td class="fields">' + storeArray2[x].lastName + '</td>';
+				str2 += '<td class="fields">' + storeArray2[x].phoneNumber + '</td>';
+				str2 += '<td class="fields">' + storeArray2[x].city + '</td>';
+				str2 += '<td class="fields">' + storeArray2[x].address + '</td>';
+				str2 += '<td class="fields">' + storeArray2[x].email + '</td>';
+				str2 += '</tr>';
+				showBook.innerHTML += str2;
+				}	
+			}
+});
 

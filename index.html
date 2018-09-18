@@ -5,12 +5,13 @@
 		<link rel='icon' type='image.png' href='Images/Logoes/logo.png' />
 		<title>Project X</title>
 		<link rel='stylesheet' type='text/css' href='projectX.css' />
+
 	</head>
 	<body>
 		<span id='logo'>AddressBook</span>
-		<span class='navs' id='location' >Location</span>
-		<span class='navs' id='about' >About Me</span>
-		<span class='navs' id='info' onmouseover="dropDown()" onmouseout='dropUp()'>Info</span>
+		<span class='navs' id='location' onmouseover="frame()" onmouseout='dropUp()' >Location</span>
+		<span class='navs' id='about' onmouseover="dropDown(2)" onmouseout='dropUp()'>About Me</span>
+		<span class='navs' id='info' onmouseover="dropDown(1)" onmouseout='dropUp()'>Info</span>
 		<div id='infoDiv'></div>
 		<span id='buttons'>
 			<span class="btn" id='add' onclick="otherPage(1)">Add New Contact</span>
