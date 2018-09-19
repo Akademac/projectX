@@ -62,6 +62,9 @@ var storeToLocal = function(firstName, lastName, phoneNumber, city, address, ema
 	this.city = city;
 	this.address = address;
 	this.email = email;
+	this.doSomething = function() {
+
+	};
 };
 
 function store() {
@@ -129,7 +132,7 @@ function dropDown(x) {
 			data = JSON.parse(myRequest.responseText);
 			console.log(data);
 			infoDiv.style.display = "inline";
-			infoDiv.innerHTML = data.name;
+			infoDiv.innerHTML = 'My name is ' + data.name + ' and I am ' + data.age + ' years old!';
 		} }
 
 myRequest.send();
@@ -137,7 +140,7 @@ myRequest.send();
 };
 
 function frame() {
-	var loc = '<iframe src="https://goo.gl/maps/4qqTyNbC4w92" width="300px" height="500px"></iframe>'
+	var loc = '<iframe src="https://google/maps/4qqTyNbC4w92" width="300px" height="500px"></iframe>'
 	infoDiv.style.display = "inline";
 	infoDiv.innerHTML = loc; 
 }
