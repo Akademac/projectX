@@ -117,6 +117,7 @@ function clearAll() {
 		allFields[f].value = '';
 	}
 };
+
 displayAll();
 
 // grab ajax text
@@ -139,7 +140,7 @@ function dropDown(x) {
 			console.log(data);
 			infoDiv.style.display = "inline";
 			infoDiv.innerHTML = 'My name is ' + data.name + ' and I am ' + data.age + ' years old!';
-		} }
+		}}
 
 myRequest.send();
 
@@ -151,8 +152,6 @@ function frame() {
 	infoDiv.innerHTML = loc; 
 }
 
-
-
 // recursive function
 
 function reverseF(n) {
@@ -162,7 +161,6 @@ function reverseF(n) {
 	else {
 		return reverseF(n.slice(1)).concat(n[0]);
 	}
-
 }	
 
 function reverse() {

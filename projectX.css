@@ -3,7 +3,7 @@
 body {
 	margin: 0px;
 	padding: 0px;
-	overflow: hidden;
+	overflow-x: hidden;
 	background-image: url('Images/mainBackground5.jpg'); 
 }
 
@@ -126,7 +126,7 @@ a {
 .inputs {
 	display: block;
 	margin: 0px auto;
-	width: 25%;
+	width: 250px;
 	height: 50px;
 	font-size: 1.5rem;
 	font-family: Arial;
@@ -136,7 +136,7 @@ a {
 }
 
 #form .inputs:nth-child(7) {
-	width: 25.50%;
+	width: 250px;
 	margin-top: 20px;
 	cursor: pointer;
 }
@@ -151,7 +151,7 @@ a {
 
 .headData {
 	padding-right: 50px;
-	font-size: 2rem;
+	font-size: 1.8rem;
 	text-align: left;
 	/*border: 1px solid black; */
 }	
@@ -179,14 +179,17 @@ a {
 
 tr th:nth-child(8) {
 	background-color: green;
-	cursor: pointer;
+}
+
+th img:nth-child(1) {
+	margin-left: 40px;
 }
 
 img {
 	width: 30px;
 	height: 30px;
-	margin-left: 45px;
-	margin-top: 5px;
+	margin-left: 5px;
+	cursor: pointer;
 	display: inline;
 }
 
