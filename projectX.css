@@ -153,7 +153,7 @@ a {
 	padding-right: 50px;
 	font-size: 2rem;
 	text-align: left;
-	border: 1px solid black;
+	/*border: 1px solid black; */
 }	
 
 .fields {
@@ -161,17 +161,37 @@ a {
 	padding: 5px;
 }
 
-td {
-	border: 1px solid black;
+td, th {
+	border: 2px solid orange;
 }
 table {
 	border-collapse: collapse;
 	color: white;
+	background-color: black;
+	opacity: .7;
 	
 }
 
 
 a {
 	color: red;
-	font-weight: bold;
+}
+
+tr th:nth-child(8) {
+	background-color: green;
+	cursor: pointer;
+}
+
+img {
+	width: 30px;
+	height: 30px;
+	margin-left: 45px;
+	margin-top: 5px;
+	display: inline;
+}
+
+tr td:nth-child(8) {
+	background-color: red;
+	opacity: 1;
+	cursor: pointer;
 }

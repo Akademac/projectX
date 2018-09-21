@@ -101,7 +101,7 @@ function displayAll() {
 			str1 += '<td class="fields">' + storeArray[x].city + '</td>';
 			str1 += '<td class="fields">' + storeArray[x].address + '</td>';
 			str1 += '<td class="fields">' + storeArray[x].email + '</td>';
-			str1 += "<td class='fields'><p><a href='#' class='dellBtn' data-id='" + x + "'>Delete</a></p></td>";
+			str1 += "<td class='fields'><p><a href='#' class='dellBtn' data-id='" + x + "' >Delete</a></p></td>";
 		
 			str1 += '</tr>';
 			showBook.innerHTML += str1;
