@@ -20,6 +20,8 @@ var submit = document.querySelector('#submit');
 //table
 
 var showBook = document.querySelector('#showBook');
+var btn1 = document.getElementById('btn1');
+
 
 // array for storing
 
@@ -36,6 +38,7 @@ var secondColor = 'yellow'
 var thirdColor =  '#40e0d0';
 
 let dropUp = () => infoDiv.style.display = 'none';
+
 
 // other pages
 
@@ -91,12 +94,15 @@ function displayAll() {
 		showBook.innerHTML = '';
 		for(x in storeArray) {
 			str1 = '<tr>';
+			str1 += '<td class="fields">' + x + '</td>';
 			str1 += '<td class="fields">' + storeArray[x].firstName + '</td>';
 			str1 += '<td class="fields">' + storeArray[x].lastName + '</td>';
 			str1 += '<td class="fields">' + storeArray[x].phoneNumber + '</td>';
 			str1 += '<td class="fields">' + storeArray[x].city + '</td>';
 			str1 += '<td class="fields">' + storeArray[x].address + '</td>';
 			str1 += '<td class="fields">' + storeArray[x].email + '</td>';
+			str1 += "<td class='fields'><p><a href='#' class='dellBtn' data-id='" + x + "'>Delete</a></p></td>";
+		
 			str1 += '</tr>';
 			showBook.innerHTML += str1;
 		}	
@@ -146,7 +152,6 @@ function frame() {
 }
 
 
-var btn1 = document.getElementById('btn1');
 
 // recursive function
 
@@ -160,8 +165,7 @@ function reverseF(n) {
 
 }	
 
-
-btn1.addEventListener('click', function() {
+function reverse() {
 	storeArray = JSON.parse(localStorage['projectX']);
 	storeArray2 = reverseF(storeArray);
 		if(showBook === null) {
@@ -171,15 +175,31 @@ btn1.addEventListener('click', function() {
 			showBook.innerHTML = '';
 			for(x in storeArray2) {
 				str2 = '<tr>';
+				str2 += '<td class="fields">' + x + '</td>';
 				str2 += '<td class="fields">' + storeArray2[x].firstName + '</td>';
 				str2 += '<td class="fields">' + storeArray2[x].lastName + '</td>';
 				str2 += '<td class="fields">' + storeArray2[x].phoneNumber + '</td>';
 				str2 += '<td class="fields">' + storeArray2[x].city + '</td>';
 				str2 += '<td class="fields">' + storeArray2[x].address + '</td>';
 				str2 += '<td class="fields">' + storeArray2[x].email + '</td>';
+				str2 += "<td class='fields'><p><a href='#' class='dellBtn' data-id='" + x + "'>Delete</a></p></td>";
+
 				str2 += '</tr>';
 				showBook.innerHTML += str2;
 				}	
 			}
-});
+};
 
+
+function removeContact(e) {
+	if(e.target.classList.contains('dellBtn')) {
+		var getID = e.target.getAttribute('data-id');
+		storeArray.splice(getID, 1);
+		localStorage['projectX'] = JSON.stringify(storeArray);
+			displayAll();
+		}
+	};
+
+if (showBook) {
+	showBook.addEventListener('click', removeContact);
+}
