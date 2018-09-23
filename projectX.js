@@ -55,7 +55,14 @@ function otherPage(y) {
 };
 
 
-	// functionnality
+var fadeDiv = document.getElementById('fade');
+var f = document.getElementById('f');
+var l = document.getElementById('l');
+var p = document.getElementById('p');
+var c = document.getElementById('c');
+var a = document.getElementById('a');
+var e = document.getElementById('e');
+
 
 
 var storeToLocal = function(firstName, lastName, phoneNumber, city, address, email) {
@@ -65,18 +72,37 @@ var storeToLocal = function(firstName, lastName, phoneNumber, city, address, ema
 	this.city = city;
 	this.address = address;
 	this.email = email;
-	this.doSomething = function() {
-
+	this.showFade = function() {
+		f.innerHTML = this.firstName;
+		l.innerHTML = this.lastName;
+		p.innerHTML = this.phoneNumber;
+		c.innerHTML = this.city;
+		a.innerHTML = this.address;
+		e.innerHTML = this.email;
+		
+			var fadeEffect = setInterval(function () {
+			if (!fadeDiv.style.opacity) {
+			     fadeDiv.style.opacity = 1;
+			       }
+			if (fadeDiv.style.opacity > 0) {
+			      fadeDiv.style.opacity -= 0.1;
+			     } 
+			else {
+			     clearInterval(fadeEffect);
+			        }
+			    }, 70);
+			
 	};
 };
 
 function store() {
 		let isEmpty = firstName.value != '' && lastName.value != '' && phoneNumber.value != '' && city.value != '' && address.value != '' && email.value != '';
-		if(isEmpty) {
+		if(isEmpty === true) {
 			var person = new storeToLocal(firstName.value, lastName.value, phoneNumber.value, city.value, address.value, email.value);
 			storeArray.push(person);
 			localStorage['projectX'] = JSON.stringify(storeArray);
-			clearAll();		
+			person.showFade();
+			clearAll();
 			}
 			displayAll();
 	};
@@ -147,7 +173,7 @@ myRequest.send();
 };
 
 function frame() {
-	var loc = '<iframe src="https://google/maps/4qqTyNbC4w92" width="300px" height="500px"></iframe>'
+	var loc = '<iframe src="https://google/maps/4qqTyNbC4w92" width="255px" height="105px"></iframe>'
 	infoDiv.style.display = "inline";
 	infoDiv.innerHTML = loc; 
 }
@@ -171,16 +197,16 @@ function reverse() {
 		}
 		else {
 			showBook.innerHTML = '';
-			for(x in storeArray2) {
+			for(y in storeArray2) {
 				str2 = '<tr>';
-				str2 += '<td class="fields">' + x + '</td>';
-				str2 += '<td class="fields">' + storeArray2[x].firstName + '</td>';
-				str2 += '<td class="fields">' + storeArray2[x].lastName + '</td>';
-				str2 += '<td class="fields">' + storeArray2[x].phoneNumber + '</td>';
-				str2 += '<td class="fields">' + storeArray2[x].city + '</td>';
-				str2 += '<td class="fields">' + storeArray2[x].address + '</td>';
-				str2 += '<td class="fields">' + storeArray2[x].email + '</td>';
-				str2 += "<td class='fields'><p><a href='#' class='dellBtn' data-id='" + x + "'>Delete</a></p></td>";
+				str2 += '<td class="fields">' + y + '</td>';
+				str2 += '<td class="fields">' + storeArray2[y].firstName + '</td>';
+				str2 += '<td class="fields">' + storeArray2[y].lastName + '</td>';
+				str2 += '<td class="fields">' + storeArray2[y].phoneNumber + '</td>';
+				str2 += '<td class="fields">' + storeArray2[y].city + '</td>';
+				str2 += '<td class="fields">' + storeArray2[y].address + '</td>';
+				str2 += '<td class="fields">' + storeArray2[y].email + '</td>';
+				str2 += "<td class='fields'><p><a href='#' class='dellBtn' data-id='" + y + "'>Delete</a></p></td>";
 
 				str2 += '</tr>';
 				showBook.innerHTML += str2;

@@ -9,9 +9,11 @@
 	</head>
 	<body>
 		<span id='logo'>AddressBook</span>
-		<span class='navs' id='location' onmouseover="frame()" onmouseout='dropUp()' >Location</span>
-		<span class='navs' id='about' onmouseover="dropDown(2)" onmouseout='dropUp()'>About Me</span>
-		<span class='navs' id='info' onmouseover="dropDown(1)" onmouseout='dropUp()'>Info</span>
+		<div id='nav'>
+			<span class='navs' id='location' onmouseover="frame()" onmouseout='dropUp()' >Location</span>
+			<span class='navs' id='about' onmouseover="dropDown(2)" onmouseout='dropUp()'>About Me</span>
+			<span class='navs' id='info' onmouseover="dropDown(1)" onmouseout='dropUp()'>Info</span>
+		</div>
 		<div id='infoDiv'></div>
 		<span id='buttons'>
 			<span class="btn" id='add' onclick="otherPage(1)">Add New Contact</span>

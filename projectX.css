@@ -16,6 +16,11 @@ body {
 	opacity: .7;
 }
 
+#nav {
+	display: inline;
+	margin-top: -30px;
+}
+
 .navs {
 	float: right;
 	height: 30px;
@@ -77,6 +82,7 @@ body {
 	grid-template-rows: repeat(2, 1fr);
 	text-align: center;
 	grid-gap: 10px;
+	position: relative;
 }
 
 .btn {
@@ -125,6 +131,7 @@ a {
 
 .inputs {
 	display: block;
+	position: relative;
 	margin: 0px auto;
 	width: 250px;
 	height: 50px;
@@ -153,7 +160,6 @@ a {
 	padding-right: 50px;
 	font-size: 1.8rem;
 	text-align: left;
-	/*border: 1px solid black; */
 }	
 
 .fields {
@@ -196,5 +202,54 @@ img {
 tr td:nth-child(8) {
 	background-color: red;
 	opacity: 1;
+}
+
+
+tr td:nth-child(8) a {
 	cursor: pointer;
+}
+
+#fade {
+	width: 300px;
+	height: 400px;
+	margin-top: 30px;
+	margin-left: 120px;
+	position: fixed;
+	font-size: 2rem;
+	font-family: 'Arial';
+	font-weight: bold;
+}
+
+#fade ul {
+	padding-top: 10px;
+}
+
+#fade li {
+	margin-top: 10px;
+	list-style: none;
+}
+
+
+
+
+												/*Media query*/
+
+@media only screen and (max-width: 600px) {
+	#nav {
+		float: right;
+		width: 100px;
+		margin-top: 40px;
+	}
+
+	.navs {
+		position: relative;
+	}
+
+	#infoDiv {
+		position: relative;
+		padding-bottom: 10px;
+		width: 260px;
+		height: 100px;
+		float: left;
+	}
 }
