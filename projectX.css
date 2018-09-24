@@ -234,7 +234,7 @@ tr td:nth-child(8) a {
 
 												/*Media query*/
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 640px) {
 	#nav {
 		float: right;
 		width: 100px;
@@ -251,5 +251,13 @@ tr td:nth-child(8) a {
 		width: 260px;
 		height: 100px;
 		float: left;
+	}
+
+	#downArrow {
+		width: 30px;
+		height: 30px;
+		margin-left: 40.4px;
+		cursor: pointer;
+		display: inline;
 	}
 }
