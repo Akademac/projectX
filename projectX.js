@@ -1,41 +1,40 @@
-//DOM var
+//DOM let
 
-var info = document.querySelector('#info');
-var about = document.querySelector('#about');
-var place = document.querySelector('#location');
-var addBtn = document.querySelector('#add');
-var viewBtn = document.querySelector('#view'); 
-var infoDiv = document.querySelector('#infoDiv');
+let info = document.querySelector('#info');
+let about = document.querySelector('#about');
+let place = document.querySelector('#location');
+let addBtn = document.querySelector('#add');
+let viewBtn = document.querySelector('#view'); 
+let infoDiv = document.querySelector('#infoDiv');
  
 // inputs
 
-var firstName = document.querySelector('#firstName');
-var lastName = document.querySelector('#lastName');
-var phoneNumber = document.querySelector('#phoneNumber');
-var city = document.querySelector('#city');
-var address = document.querySelector('#address');
-var email = document.querySelector('#email');
-var submit = document.querySelector('#submit');
+let firstName = document.querySelector('#firstName');
+let lastName = document.querySelector('#lastName');
+let phoneNumber = document.querySelector('#phoneNumber');
+let city = document.querySelector('#city');
+let address = document.querySelector('#address');
+let email = document.querySelector('#email');
+let submit = document.querySelector('#submit');
 
 //table
 
-var showBook = document.querySelector('#showBook');
-var btn1 = document.getElementById('btn1');
-
+let showBook = document.querySelector('#showBook');
+let btn1 = document.getElementById('btn1');
 
 // array for storing
 
-var storeArray = [];
+let storeArray = [];
 
 // vars for displaying conacts
 
-var str1, str2; 	
+let str1, str2; 	
 
 // colors
 
-var firstColor = '#66cdaa';
-var secondColor = 'yellow'
-var thirdColor =  '#40e0d0';
+let firstColor = '#66cdaa';
+let secondColor = 'yellow'
+let thirdColor =  '#40e0d0';
 
 let dropUp = () => infoDiv.style.display = 'none';
 
@@ -54,18 +53,19 @@ function otherPage(y) {
 	}
 };
 
+//fadeing div
 
-var fadeDiv = document.getElementById('fade');
-var f = document.getElementById('f');
-var l = document.getElementById('l');
-var p = document.getElementById('p');
-var c = document.getElementById('c');
-var a = document.getElementById('a');
-var e = document.getElementById('e');
+let fadeDiv = document.getElementById('fade');
+let f = document.getElementById('f');
+let l = document.getElementById('l');
+let p = document.getElementById('p');
+let c = document.getElementById('c');
+let a = document.getElementById('a');
+let e = document.getElementById('e');
 
+//functionality
 
-
-var storeToLocal = function(firstName, lastName, phoneNumber, city, address, email) {
+let storeToLocal = function(firstName, lastName, phoneNumber, city, address, email) {
 	this.firstName = firstName;
 	this.lastName = lastName;
 	this.phoneNumber = phoneNumber;
@@ -73,14 +73,14 @@ var storeToLocal = function(firstName, lastName, phoneNumber, city, address, ema
 	this.address = address;
 	this.email = email;
 	this.showFade = function() {
-		f.innerHTML = this.firstName;
-		l.innerHTML = this.lastName;
-		p.innerHTML = this.phoneNumber;
-		c.innerHTML = this.city;
-		a.innerHTML = this.address;
-		e.innerHTML = this.email;
+		 f.innerHTML = this.firstName;
+		 l.innerHTML = this.lastName;
+		 p.innerHTML = this.phoneNumber;
+		 c.innerHTML = this.city;
+		 a.innerHTML = this.address;
+		 e.innerHTML = this.email;
 		
-			var fadeEffect = setInterval(function () {
+		 let fadeEffect = setInterval(function () {
 			if (!fadeDiv.style.opacity) {
 			     fadeDiv.style.opacity = 1;
 			       }
@@ -91,14 +91,13 @@ var storeToLocal = function(firstName, lastName, phoneNumber, city, address, ema
 			     clearInterval(fadeEffect);
 			        }
 			    }, 70);
-			
-	};
+			};
 };
 
 function store() {
 		let isEmpty = firstName.value != '' && lastName.value != '' && phoneNumber.value != '' && city.value != '' && address.value != '' && email.value != '';
 		if(isEmpty === true) {
-			var person = new storeToLocal(firstName.value, lastName.value, phoneNumber.value, city.value, address.value, email.value);
+			let person = new storeToLocal(firstName.value, lastName.value, phoneNumber.value, city.value, address.value, email.value);
 			storeArray.push(person);
 			localStorage['projectX'] = JSON.stringify(storeArray);
 			person.showFade();
@@ -127,18 +126,17 @@ function displayAll() {
 			str1 += '<td class="fields">' + storeArray[x].city + '</td>';
 			str1 += '<td class="fields">' + storeArray[x].address + '</td>';
 			str1 += '<td class="fields">' + storeArray[x].email + '</td>';
-			str1 += "<td class='fields'><p><a href='#' class='dellBtn' data-id='" + x + "' >Delete</a></p></td>";
+			str1 += "<td class='fields'><p><a href='#' class='dellBtn' data-id='" + x + "' style='text-align: center'>Delete</a></p></td>";
 		
 			str1 += '</tr>';
 			showBook.innerHTML += str1;
-		}	
+			}	
 		}
 	}
-
 };
 
 function clearAll() {
-	var allFields = document.querySelectorAll('.inputs');
+	let allFields = document.querySelectorAll('.inputs');
 	for(f in allFields) {
 		allFields[f].value = '';
 	}
@@ -148,8 +146,8 @@ displayAll();
 
 // grab ajax text
 
-var myRequest = new XMLHttpRequest();
-var data;
+let myRequest = new XMLHttpRequest();
+let data;
 function dropDown(x) {
 	if(x === 1){
 		myRequest.open('GET', 'https://akademac.github.io/projectX.txt/projectX.txt');
@@ -166,14 +164,17 @@ function dropDown(x) {
 			console.log(data);
 			infoDiv.style.display = "inline";
 			infoDiv.innerHTML = 'My name is ' + data.name + ' and I am ' + data.age + ' years old!';
-		}}
+		}
+	}
 
 myRequest.send();
 
 };
 
+//iframe need key
+
 function frame() {
-	var loc = '<iframe src="https://google/maps/4qqTyNbC4w92" width="255px" height="105px"></iframe>'
+	let loc = '<iframe src="https://google/maps/4qqTyNbC4w92" width="255px" height="105px"></iframe>'
 	infoDiv.style.display = "inline";
 	infoDiv.innerHTML = loc; 
 }
@@ -211,13 +212,12 @@ function reverse() {
 				str2 += '</tr>';
 				showBook.innerHTML += str2;
 				}	
-			}
+		}
 };
-
 
 function removeContact(e) {
 	if(e.target.classList.contains('dellBtn')) {
-		var getID = e.target.getAttribute('data-id');
+		let getID = e.target.getAttribute('data-id');
 		storeArray.splice(getID, 1);
 		localStorage['projectX'] = JSON.stringify(storeArray);
 			displayAll();
