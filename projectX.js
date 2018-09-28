@@ -163,7 +163,12 @@ function dropDown(x) {
 			data = JSON.parse(myRequest.responseText);
 			console.log(data);
 			infoDiv.style.display = "inline";
-			infoDiv.innerHTML = 'My name is ' + data.name + ' and I am ' + data.age + ' years old!';
+			infoDiv.innerHTML = '<ul>';
+			infoDiv.innerHTML += '<li>' + "Phone Number: " + data.phoneNumber + '</li>';
+			infoDiv.innerHTML += '<li>' + "Email: " + data.email + '</li>';
+			infoDiv.innerHTML += '</ul>';
+
+
 		}
 	}
 
