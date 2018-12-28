@@ -150,9 +150,11 @@ let myRequest = new XMLHttpRequest();
 let data;
 function dropDown(x) {
 	if(x === 1){
-		myRequest.open('GET', 'https://akademac.github.io/projectX.txt/projectX.txt');
+		myRequest.open('GET', 'https://akademac.github.io/JSON/testJson.json');
 		myRequest.onload = function() {
-		infoDiv.innerHTML = myRequest.responseText;
+		data = JSON.parse(myRequest.responseText);
+		console.log(data[1].description);
+		infoDiv.innerHTML = data[1].description;
 		infoDiv.style.display = "inline";
 		infoDiv.style.color = 'white';
 				};
@@ -161,11 +163,11 @@ function dropDown(x) {
 		myRequest.open('GET', 'https://akademac.github.io/JSON/testJson.json');
 		myRequest.onload = function() {
 			data = JSON.parse(myRequest.responseText);
-			console.log(data);
+			console.log(data[0].phoneNumber);
 			infoDiv.style.display = "inline";
 			infoDiv.innerHTML = '<ul>';
-			infoDiv.innerHTML += '<li>' + "Phone Number: " + data.phoneNumber + '</li>';
-			infoDiv.innerHTML += '<li>' + "Email: " + data.email + '</li>';
+			infoDiv.innerHTML += '<li>' + "Phone Number: " + data[0].phoneNumber + '</li>';
+			infoDiv.innerHTML += '<li>' + "Email: " + data[0].email + '</li>';
 			infoDiv.innerHTML += '</ul>';
 
 
