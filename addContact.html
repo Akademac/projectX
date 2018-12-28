@@ -7,6 +7,16 @@
 		<link rel='stylesheet' type='text/css' href='projectX.css' />
 	</head>
 	<body>
+		<div id='fade'>
+			<ul>
+				<li id='f'></li>
+				<li id='l'></li>
+				<li id='p'></li>
+				<li id='c'></li>
+				<li id='a'></li>
+				<li id='e'></li>
+			</ul>
+		</div>
 
 		<div id='container'>
 			<div id='form'>
@@ -16,11 +26,10 @@
 				<input type="text" placeholder="City" name="city" id='city' class='inputs' required />
 				<input type="text" placeholder="Address" name="address" id='address' class='inputs' required />
 				<input type="text" placeholder="Email" name="email" id='email' class='inputs' required />
-				<button type="submit" class="inputs" onclick="store()" >Submit</button>
-				<a href='viewAll.html'><button type="submit" class="inputs" onclick="store()" >View All contacts</button></a>
+				<button type="submit"  onclick="store()" >Submit</button>
+				<a href='viewAll.html'><button type="submit"  onclick="store()" id='btn'>View All contacts</button></a>
 			</div>
 		</div>
-
 		<script src='projectX.js'> 
 		</script> 
 	</body>
